@@ -69,7 +69,13 @@ public class PriamStartupAgent
         }
         
         System.setProperty("cassandra.initial_token", token);
-  
+
+        // If this is empty, we are the first node, so disable auto bootstrapping.
+        if (seeds.isEmpty())
+        {
+            System.setProperty("cassandra.auto_bootstrap", "false");
+        }
+
         if (isReplace)
         {	
         	System.out.println("Detect cassandra version : " + FBUtilities.getReleaseVersionString());
