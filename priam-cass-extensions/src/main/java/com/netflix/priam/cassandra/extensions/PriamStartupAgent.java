@@ -74,20 +74,20 @@ public class PriamStartupAgent
         if (seeds.isEmpty())
         {
             System.setProperty("cassandra.auto_bootstrap", "false");
+            System.out.println("No seeds found, forcing auto_bootstrap to false");
+        } else {
+	        if (isReplace)
+	        {	
+	        	System.out.println("Detect cassandra version : " + FBUtilities.getReleaseVersionString());
+	        	if (FBUtilities.getReleaseVersionString().compareTo(REPLACED_ADDRESS_MIN_VER) < 0)
+	        	{
+	        		System.setProperty("cassandra.replace_token", token);
+	        	} else 
+	        	{	
+	               System.setProperty("cassandra.replace_address", replacedIp);
+	        	}
+	        }
         }
-
-        if (isReplace)
-        {	
-        	System.out.println("Detect cassandra version : " + FBUtilities.getReleaseVersionString());
-        	if (FBUtilities.getReleaseVersionString().compareTo(REPLACED_ADDRESS_MIN_VER) < 0)
-        	{
-        		System.setProperty("cassandra.replace_token", token);
-        	} else 
-        	{	
-               System.setProperty("cassandra.replace_address", replacedIp);
-        	}
-        }
-
     }
 
 }
