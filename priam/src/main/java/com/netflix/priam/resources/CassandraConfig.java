@@ -58,16 +58,17 @@ public class CassandraConfig
         try
         {
             final List<String> seeds = priamServer.getId().getSeeds();
-            if (!seeds.isEmpty())
-                return Response.ok(StringUtils.join(seeds, ',')).build();
-            logger.error("Cannot find the Seeds");
+            if (seeds.isEmpty())
+            {
+                logger.error("Cannot find the Seeds, returning empty list");
+            }
+            return Response.ok(StringUtils.join(seeds, ',')).build();
         }
         catch (Exception e)
         {
             logger.error("Error while executing get_seeds", e);
             return Response.serverError().build();
         }
-        return Response.status(500).build();
     }
 
     @GET
