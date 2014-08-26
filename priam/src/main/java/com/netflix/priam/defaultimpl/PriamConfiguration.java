@@ -124,6 +124,7 @@ public class PriamConfiguration implements IConfiguration
     private static final String CONFIG_INDEX_INTERVAL = PRIAM_PRE + ".index.interval";
     private static final String CONFIG_EXTRA_PARAMS = PRIAM_PRE + ".extra.params";
     private static final String CONFIG_AUTO_BOOTSTRAP = PRIAM_PRE + ".auto.bootstrap";
+    private static final String CONFIG_DSE_CLUSTER_TYPE = PRIAM_PRE + ".dse.cluster.type";
 
     private static final String CONFIG_US_EAST_1_S3_ENDPOINT = PRIAM_PRE + ".useast1.s3url";
     private static final String CONFIG_US_WEST_1_S3_ENDPOINT = PRIAM_PRE + ".uswest1.s3url";
@@ -953,4 +954,9 @@ public class PriamConfiguration implements IConfiguration
 		return config.get(CONFIG_PGP_PUB_KEY_LOC);
 	}
 
+    
+    //values are cassandra, solr, hadoop, spark or hadoop-spark
+    public String getDseClusterType() { 
+        return config.get(CONFIG_DSE_CLUSTER_TYPE + "." + ASG_NAME, "cassandra");
+    }
 }

@@ -473,4 +473,6 @@ public interface IConfiguration
      */    
     public String getPgpPublicKeyLoc();
 
+    //if using with Datastax Enterprise
+    public String getDseClusterType();
 }
