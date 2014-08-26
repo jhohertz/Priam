@@ -614,4 +614,10 @@ public class FakeConfiguration implements IConfiguration
 	public String getPgpPublicKeyLoc() {
 		return null;
 	}	
+
+    @Override
+    public String getDseClusterType() {
+        // TODO Auto-generated method stub
+        return "cassandra";
+    }
 }
