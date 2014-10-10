@@ -358,12 +358,6 @@ public class FakeConfiguration implements IConfiguration
     }
 
     @Override
-    public int getMemtableTotalSpaceMB()
-    {
-        return 0;
-    }
-
-    @Override
     public int getStreamingThroughputMB()
     {
         return 400;

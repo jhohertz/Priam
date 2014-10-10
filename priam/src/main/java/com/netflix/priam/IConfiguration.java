@@ -291,11 +291,6 @@ public interface IConfiguration
     public String getSeedProviderName();
 
     /**
-     * @return Get Memtable throughput settings
-     */
-    public int getMemtableTotalSpaceMB();
-    
-    /**
      * @return stream_throughput_outbound_megabits_per_sec in yaml
      */
     public int getStreamingThroughputMB();

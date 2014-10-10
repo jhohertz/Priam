@@ -67,7 +67,6 @@ public class PriamConfiguration implements IConfiguration
     private static final String CONFIG_HINT_DELAY = PRIAM_PRE + ".hint.delay";
     private static final String CONFIG_BOOTCLUSTER_NAME = PRIAM_PRE + ".bootcluster";
     private static final String CONFIG_ENDPOINT_SNITCH = PRIAM_PRE + ".endpoint_snitch";
-    private static final String CONFIG_MEMTABLE_TOTAL_SPACE = PRIAM_PRE + ".memtabletotalspace";
     private static final String CONFIG_CASS_PROCESS_NAME = PRIAM_PRE + ".cass.process";
     private static final String CONFIG_VNODE_NUM_TOKENS = PRIAM_PRE + ".vnodes.numTokens";
     private static final String CONFIG_YAML_LOCATION = PRIAM_PRE + ".yamlLocation";
@@ -627,15 +626,6 @@ public class PriamConfiguration implements IConfiguration
     public String getSeedProviderName()
     {
         return config.get(CONFIG_SEED_PROVIDER_NAME, DEFAULT_SEED_PROVIDER);
-    }
-
-  @Override
-    /**
-     * Defaults to 0, means dont set it in yaml
-     */
-    public int getMemtableTotalSpaceMB()
-    {
-        return config.get(CONFIG_MEMTABLE_TOTAL_SPACE, 1024);
     }
 
     @Override
