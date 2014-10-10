@@ -260,11 +260,6 @@ concurrent_writes: 32
 # By default this will be set to the amount of data directories defined.
 #memtable_flush_writers: 1
 
-# the number of full memtables to allow pending flush, that is,
-# waiting for a writer thread.  At a minimum, this should be set to
-# the maximum number of secondary indexes created on a single CF.
-memtable_flush_queue_size: 4
-
 # Whether to, when doing sequential writing, fsync() at intervals in
 # order to force the operating system to flush the dirty
 # buffers. Enable this to avoid sudden dirty buffer flushing from
