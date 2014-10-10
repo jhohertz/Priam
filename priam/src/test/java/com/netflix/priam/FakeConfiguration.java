@@ -363,12 +363,6 @@ public class FakeConfiguration implements IConfiguration
         return 400;
     }
 
-    @Override
-    public boolean getMultithreadedCompaction()
-    {
-        return false;
-    }
-
     public String getPartitioner()
     {
         return "org.apache.cassandra.dht.RandomPartitioner";
