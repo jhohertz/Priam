@@ -91,7 +91,6 @@ public class PriamConfiguration implements IConfiguration
     private static final String CONFIG_BACKUP_CHUNK_SIZE = PRIAM_PRE + ".backup.chunksizemb";
     private static final String CONFIG_BACKUP_RETENTION = PRIAM_PRE + ".backup.retention";
     private static final String CONFIG_BACKUP_RACS = PRIAM_PRE + ".backup.racs";
-    private static final String CONFIG_MULTITHREADED_COMPACTION = PRIAM_PRE + ".multithreaded.compaction";
     private static final String CONFIG_STREAMING_THROUGHPUT_MB = PRIAM_PRE + ".streaming.throughput.mb";
     private static final String CONFIG_PARTITIONER = PRIAM_PRE + ".partitioner";
     private static final String CONFIG_KEYCACHE_SIZE = PRIAM_PRE + ".keyCache.size";
@@ -632,12 +631,6 @@ public class PriamConfiguration implements IConfiguration
     public int getStreamingThroughputMB()
     {
         return config.get(CONFIG_STREAMING_THROUGHPUT_MB, 400);
-    }
-
-    @Override
-    public boolean getMultithreadedCompaction()
-    {
-        return config.get(CONFIG_MULTITHREADED_COMPACTION, false);
     }
 
     public String getPartitioner()

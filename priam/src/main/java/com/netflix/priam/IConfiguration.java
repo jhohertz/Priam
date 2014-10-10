@@ -296,11 +296,6 @@ public interface IConfiguration
     public int getStreamingThroughputMB();
     
     /**
-     * @return multithreaded_compaction in yaml
-     */
-    public boolean getMultithreadedCompaction();
-
-    /**
      * Get the paritioner for this cassandra cluster/node.
      *
      * @return the fully-qualified name of the partitioner class
