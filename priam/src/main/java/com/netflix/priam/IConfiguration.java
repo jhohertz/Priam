@@ -256,11 +256,6 @@ public interface IConfiguration
     boolean isLocalBootstrapEnabled();
 
     /**
-     * @return In memory compaction limit
-     */
-    public int getInMemoryCompactionLimit();
-
-    /**
      * @return Compaction throughput
      */    
     public int getCompactionThroughput();

@@ -62,7 +62,6 @@ public class PriamConfiguration implements IConfiguration
     private static final String CONFIG_SSL_STORAGE_LISTERN_PORT_NAME = PRIAM_PRE + ".ssl.storage.port";
     private static final String CONFIG_CL_BK_LOCATION = PRIAM_PRE + ".backup.commitlog.location";
     private static final String CONFIG_THROTTLE_UPLOAD_PER_SECOND = PRIAM_PRE + ".upload.throttle";
-    private static final String CONFIG_IN_MEMORY_COMPACTION_LIMIT = PRIAM_PRE + ".memory.compaction.limit";
     private static final String CONFIG_COMPACTION_THROUHPUT = PRIAM_PRE + ".compaction.throughput";
     private static final String CONFIG_MAX_HINT_WINDOW_IN_MS = PRIAM_PRE + ".hint.window";
     private static final String CONFIG_HINT_DELAY = PRIAM_PRE + ".hint.delay";
@@ -594,12 +593,6 @@ public class PriamConfiguration implements IConfiguration
     public boolean isLocalBootstrapEnabled()
     {
         return config.get(CONFIG_LOAD_LOCAL_PROPERTIES, false);
-    }
-
-    @Override
-    public int getInMemoryCompactionLimit()
-    {
-        return config.get(CONFIG_IN_MEMORY_COMPACTION_LIMIT, 128);
     }
 
     @Override

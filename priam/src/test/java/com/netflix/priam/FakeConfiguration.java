@@ -253,11 +253,6 @@ public class FakeConfiguration implements IConfiguration
 	}
 
 	@Override
-	public int getInMemoryCompactionLimit() {
-		return 8;
-	}
-
-	@Override
 	public int getCompactionThroughput() {
 		// TODO Auto-generated method stub
 		return 0;
